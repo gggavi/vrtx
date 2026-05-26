@@ -6,12 +6,12 @@
 const CONFIG = {
   // ─── WHATSAPP ──────────────────────────────────────────────
   // Formato internacional sin + ni espacios. Ej: Argentina → 549xxxxxxxxxx
-  whatsappNumber: "5491112345678",
+  whatsappNumber: "5493447460703",
 
   // ─── MARCA ────────────────────────────────────────────────
-  brandName: "VRTX",
-  tagline: "Ropa Urbana Premium",
-  instagram: "@vrtxstore",
+  brandName: "KUBA SUEDE",
+  tagline: "Vestite Autentico",
+  instagram: "@kubasuede",
 
   // ─── ADMIN ────────────────────────────────────────────────
   adminUser: "admin",
