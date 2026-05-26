@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VRTX — Ropa Urbana Premium</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <!-- Google Fonts: Bebas Neue (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body class="dark-mode">
+
+  <!-- ===== LOADER ===== -->
+  <div id="loader" class="loader">
+    <div class="loader-logo">VRTX</div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">VRT<span>X</span></a>
+      <div class="nav-search">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off" />
+        <button class="search-btn" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="darkModeToggle" aria-label="Modo oscuro">
+          <svg id="moonIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="icon-btn" id="favBtn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="favCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Category nav -->
+    <div class="cat-nav" id="catNav">
+      <a href="#remeras" class="cat-link active" data-cat="remeras">Remeras</a>
+      <a href="#pantalones" class="cat-link" data-cat="pantalones">Pantalones</a>
+      <a href="#buzos" class="cat-link" data-cat="buzos">Buzos</a>
+      <a href="#camperas" class="cat-link" data-cat="camperas">Camperas</a>
+      <a href="#accesorios" class="cat-link" data-cat="accesorios">Accesorios</a>
+      <a href="#outfits" class="cat-link" data-cat="outfits">Outfits</a>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="#remeras" class="mob-link">Remeras</a>
+    <a href="#pantalones" class="mob-link">Pantalones</a>
+    <a href="#buzos" class="mob-link">Buzos</a>
+    <a href="#camperas" class="mob-link">Camperas</a>
+    <a href="#accesorios" class="mob-link">Accesorios</a>
+    <a href="#outfits" class="mob-link">Outfits</a>
+    <div class="mob-divider"></div>
+    <a href="admin/index.html" class="mob-link mob-admin">Admin Panel</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg">
+        <div class="hero-grain"></div>
+        <div class="hero-lines"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Nueva Colección 2025</p>
+        <h1 class="hero-title">DEFINE<br /><span>TU ESTILO</span></h1>
+        <p class="hero-sub">Ropa urbana premium. Sin límites.</p>
+        <div class="hero-ctas">
+          <a href="#remeras" class="btn btn-primary">Ver Colección</a>
+          <a href="#outfits" class="btn btn-outline">Ver Outfits</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters-bar" id="filtersBar">
+      <div class="filters-inner">
+        <div class="filter-group">
+          <label>Talle</label>
+          <div class="size-filters" id="sizeFilters">
+            <button class="size-btn active" data-size="all">Todos</button>
+            <button class="size-btn" data-size="XS">XS</button>
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
+            <button class="size-btn" data-size="XXL">XXL</button>
+            <button class="size-btn" data-size="38">38</button>
+            <button class="size-btn" data-size="40">40</button>
+            <button class="size-btn" data-size="42">42</button>
+            <button class="size-btn" data-size="44">44</button>
+            <button class="size-btn" data-size="46">46</button>
+            <button class="size-btn" data-size="48">48</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Precio máx</label>
+          <div class="price-filter">
+            <input type="range" id="priceRange" min="0" max="100000" step="500" value="100000" />
+            <span id="priceVal">$100.000</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Estado</label>
+          <select id="stockFilter" class="filter-select">
+            <option value="all">Todos</option>
+            <option value="instock">Con stock</option>
+            <option value="outstock">Sin stock</option>
+          </select>
+        </div>
+        <button class="btn-reset" id="resetFilters">Limpiar filtros</button>
+      </div>
+    </section>
+
+    <!-- SEARCH RESULTS -->
+    <section class="search-results" id="searchResults" style="display:none">
+      <div class="container">
+        <h2 class="section-title">Resultados de búsqueda</h2>
+        <div class="products-grid" id="searchGrid"></div>
+        <p class="no-results" id="noResults" style="display:none">No se encontraron productos.</p>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <div id="catalogContainer">
+      <!-- Injected by JS -->
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">VRT<span>X</span></span>
+        <p>Ropa urbana premium para quienes no siguen tendencias — las crean.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Categorías</h4>
+        <a href="#remeras">Remeras</a>
+        <a href="#pantalones">Pantalones</a>
+        <a href="#buzos">Buzos</a>
+        <a href="#camperas">Camperas</a>
+        <a href="#accesorios">Accesorios</a>
+        <a href="#outfits">Outfits</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>WhatsApp: <a id="footerWA" href="#">+54 9 XXX XXX XXXX</a></p>
+        <p>Instagram: <a href="#">@vrtxstore</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VRTX. Todos los derechos reservados.</p>
+      <a href="admin/index.html" class="admin-link">Admin</a>
+    </div>
+  </footer>
+
+  <!-- MODAL PRODUCTO -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-inner" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

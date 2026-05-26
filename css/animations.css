@@ -1,0 +1,106 @@
+/* ===================================
+   VRTX — ANIMATIONS
+=================================== */
+
+/* Entry animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1),
+              transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children .product-card:nth-child(1)  { transition-delay: 0.05s; }
+.stagger-children .product-card:nth-child(2)  { transition-delay: 0.10s; }
+.stagger-children .product-card:nth-child(3)  { transition-delay: 0.15s; }
+.stagger-children .product-card:nth-child(4)  { transition-delay: 0.20s; }
+.stagger-children .product-card:nth-child(5)  { transition-delay: 0.25s; }
+.stagger-children .product-card:nth-child(6)  { transition-delay: 0.30s; }
+.stagger-children .product-card:nth-child(7)  { transition-delay: 0.35s; }
+.stagger-children .product-card:nth-child(8)  { transition-delay: 0.40s; }
+
+/* Section title underline animation */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--red);
+  margin-top: 8px;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.section-title.visible::after { width: 60px; }
+
+/* Card image shimmer (loading placeholder) */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gray-800) 25%,
+    var(--gray-700) 50%,
+    var(--gray-800) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* Red line accent */
+.red-line {
+  display: block; height: 2px; width: 40px;
+  background: var(--red);
+  margin-bottom: 16px;
+}
+
+/* Hover glow on card */
+.product-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,0,0,0.08) 0%, transparent 70%);
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: 1;
+}
+.product-card:hover::before { opacity: 1; }
+
+/* Navbar scroll effect */
+.navbar.scrolled {
+  background: rgba(0,0,0,0.98);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+body.light-mode .navbar.scrolled { background: rgba(255,255,255,0.98); }
+
+/* Pulse on WA button */
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+  50%      { box-shadow: 0 0 0 8px rgba(37,211,102,0); }
+}
+.btn-wa:not(.disabled) { animation: waPulse 2.5s ease-in-out infinite; }
+.btn-wa:hover          { animation: none; }
