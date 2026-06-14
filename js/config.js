@@ -28,7 +28,7 @@ const CONFIG = {
     { id: "pantalones", label: "Pantalones", sizes: ["38","40","42","44","46","48"] },
     { id: "buzos",      label: "Buzos",      sizes: ["XS","S","M","L","XL","XXL"] },
     { id: "camperas",   label: "Camperas",   sizes: ["XS","S","M","L","XL","XXL"] },
-    { id: "VARIOS", label: "VARIOS", sizes: ["Único"] },
+    { id: "varios", label: "VARIOS", sizes: ["Único"] },
     { id: "outfits",    label: "Outfits",    sizes: ["XS","S","M","L","XL","XXL"] },
   ],
 
